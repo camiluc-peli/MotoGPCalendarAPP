@@ -1,3 +1,4 @@
+import './EventsList.css';
 import React from 'react';
 import Event from './Event';
 
@@ -10,9 +11,10 @@ const EventsList = (props) => {
     });
 
     return (
-        <div>
-            <h2>Events' List</h2>
-            <div>{events}</div>
+        <div className="list">
+            <div className="ui celled middle aligned selection list">
+                {events}
+            </div>
         </div>
     );
 }

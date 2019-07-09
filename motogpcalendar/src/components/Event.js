@@ -6,14 +6,19 @@ class Event extends React.Component{
         const { eventName, eventDate, circuitName, countryName } = this.props.event;
 
         return (
-            <div>
-                <h4>{eventName}</h4>
-                <div>
-                    Circuit: {circuitName} - {countryName}
-                    <br/>
-                    Date: {eventDate}
+            <div className="item">
+                <div className="content">
+                    <a href="" className="header">{eventName}</a>
+                    <div className="meta">
+                        <span>{countryName}</span>
+                    </div>
+                    <div className="description">
+                        <p>Circuit: {circuitName}</p>
+                    </div>
+                    <div className="extra">
+                        Date: {eventDate}
+                    </div>
                 </div>
-                
             </div>
         );
     }
