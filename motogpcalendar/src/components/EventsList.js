@@ -3,16 +3,11 @@ import Event from './Event';
 
 const EventsList = (props) => {
     const events = props.events.map( event => {
-        return <Event 
+        return <Event
                     key={event.id}
-                    eventName={event.eventName}
-                    eventDate={event.eventDate}
-                    circuitName={event.circuitName}
-                    countryName={event.countryName}
+                    event={event}
                     />
     });
-
-    console.log(events);
 
     return (
         <div>

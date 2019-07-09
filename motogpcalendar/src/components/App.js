@@ -15,7 +15,6 @@ class App extends React.Component
         );
 
         this.setState({ events: response.data });
-        console.log(this.state.events);
         this.setState({ loading: false });
     }
 

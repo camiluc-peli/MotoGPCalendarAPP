@@ -3,7 +3,7 @@ import React from 'react';
 class Event extends React.Component{
 
     render(){
-        const { key, eventName, eventDate, circuitName, countryName } = this.props;
+        const { eventName, eventDate, circuitName, countryName } = this.props.event;
 
         return (
             <div>
