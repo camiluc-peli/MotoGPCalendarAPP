@@ -1,9 +1,7 @@
 import React from 'react';
-import Faker from 'faker';
-import List from './EventsList';
-import Event from './Event';
 import Spinner from './Spinner';
 import motogpcalendar from '../api/motogpcalendar';
+import EventsList from './EventsList';
 
 class App extends React.Component
 {
@@ -15,8 +13,9 @@ class App extends React.Component
         const response = await motogpcalendar.get(
             '/api/events'
         );
-        
+
         this.setState({ events: response.data });
+        console.log(this.state.events);
         this.setState({ loading: false });
     }
 
@@ -29,7 +28,7 @@ class App extends React.Component
             );       
         }
 
-        if(this.state.events.length < 1 && this.state.loading){
+        if(this.state.events < 1 && this.state.loading){
             return (
                 <div>
                     <Spinner message="Loading the events"/>
@@ -39,7 +38,7 @@ class App extends React.Component
         
         return (
             <div>
-                <div>{this.state.events}</div>
+                <EventsList events={this.state.events}/>
             </div>
         );
     }
